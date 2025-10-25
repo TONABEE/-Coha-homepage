@@ -531,6 +531,7 @@ main {
   background: var(--color-primary);
   color: #fff;
   box-shadow: 0 12px 36px rgba(255, 179, 217, 0.35);
+  width: 100%;
 }
 
 .button--primary:hover,
@@ -546,6 +547,13 @@ main {
   border-color: var(--color-primary);
 }
 
+.button--secondary--icon {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  width: 20%;
+  padding: 7px 18px;
+}
 .button--secondary:hover,
 .button--secondary:focus {
   background: rgba(255, 182, 163, 0.1);
@@ -953,10 +961,35 @@ main {
   justify-content: space-between;
 }
 
+
 .footer__note {
   text-align: center;
   color: var(--color-text-muted);
   font-size: 0.9rem;
+}
+
+/*
+ * Contactのアイコン用スタイル
+ */
+.footer__social-links {
+  display: flex;
+  flex-direction: row;  /* ★アイコンを横並びにする */
+  align-items: center; /* ★アイコンの高さを中央で揃える */
+  gap: 16px;           /* アイコン間の隙間 */
+  flex-wrap: wrap;     /* 画面が狭い場合に折り返す */
+}
+
+/* アイコン（画像）のサイズを統一する */
+.footer__social-links a img {
+  height: 28px;   /* ★高さを 28px に統一（お好みで調整してください） */
+  width: auto;    /* 幅は自動調整 */
+  vertical-align: middle; /* 画像のベースラインを揃える */
+}
+
+/* 「お問い合わせフォーム」のテキストが浮かないように調整 */
+.footer__social-links a {
+  text-decoration: none; /* 下線を消す（必要なら） */
+  color: inherit;        /* 親要素の色を継承 */
 }
 
 /* Contact info */
@@ -992,6 +1025,8 @@ main {
   flex-wrap: wrap;
   gap: 12px;
 }
+
+
 
 /* Utility */
 .text-center {
@@ -1305,7 +1340,7 @@ overflow-x: hidden;
 
   .hero__actions {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 16px;
     justify-content: center;
     flex-direction: row; /* (columnを上書き) */
